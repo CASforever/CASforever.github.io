@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+	<title>A Beautiful Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+            src: url('font/digital-7_mono-webfont.eot');
+            src: url('font/digital-7_mono-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('font/digital-7_mono-webfont.woff') format('woff'),
+                 url('font/digital-7_mono-webfont.ttf') format('truetype'),
+                 url('font/digital-7_mono-webfont.svg#digital-7mono') format('svg');
+
+		}
+		@font-face {
+			font-family: enword;
+			src: url('font/Note_this.ttf') format("truetype");
+		}
+		@font-face {
+			font-family: cnword;
+			src: url('font/senty.ttf') format("truetype"),
+		      url('font/senty.eot?#iefix') format('embedded-opentype');
+		}
+	    @font-face {
+			font-family: angelina;
+			src: url('font/angelina.ttf') format("truetype"),
+		         url('font/angelina.eot') format("opentype");
+		}
+
+	
+	</style>
+
+	
+	<link rel="shortcut icon" href="./favicon2.ico">
+	<link href="css/default_dev.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+    <script type="text/javascript" src="js/console.js"></script>
+
+	
+</head>
+
+<body>
+
+
+
+	<div id="mainDiv">
+		<div id="content">
+		
+			<div id="code">
+				<span class="comments">...</span>
+				<span class="comments">...</span>
+                <span class="comments">亲爱的小猪猪，生日快乐！</span>
+                <span class="comments">虽然我不能陪你在身边，但我希望依然能开心快乐，因为我一直在想你。</span>
+            
+                <span class="comments">在2011年的夏天，我们毕业了、疯狂了、相爱了……</span>
+                <span class="comments">记得南湖广场的那个公园我们第一次约会</span>
+                <span class="comments">记得湖边那场雨中我们第一次牵手和拥抱</span>
+                <span class="comments">记得那天我送你的第一个礼物</span>
+                <span class="comments">记得那晚你脆弱的哭泣，我背着你在雨中前行</span>
+                <span class="comments">记得在竹林桥街道上的携手同行</span>
+                <span class="comments">记得新华路夜晚里的骑车呐喊</span>
+                <span class="comments">记得华科林荫小道上的争吵</span>
+                <span class="comments">记得东湖梅园里的调情</span>
+                <span class="comments">记得二师校园里的追逐</span>
+                <span class="comments">记得初时你的腼腆、我的无知</span>
+                <span class="comments">虽然这些都已成为过去，但也成为我们美好的回忆</span>
+                <span class="comments">也因为这些所以铸就了我们刻骨铭心的爱</span>
+                
+
+                <span class="comments">从我对你表白的那一刻起，在以后的每一天、每一分、每一秒里我都在想你，这中间有苦涩
+                	、有失落、有伤心，但更多的是快乐。我很平凡和普通，但我有一颗不平凡的心，因为它装在着你的一言一行、一颦一笑，
+                	你的微笑、你的关心，还有我对你满满的爱。</span>
+
+                <span class="comments">PS:右边记载了我们恋爱的时间。</span>
+               
+              
+               
+                </div>
+
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						   <br/>
+						How long did you remember that we know each other.
+						
+						<div id="elapseClock"></div>
+					<div class="loveupersec">I want to give it to you whatever I have.<br />Even my live. <br/>
+					
+					</div>
+
+					<div id="loveu">
+					
+						<br/>
+					
+						<div class="signature"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			create by your husband <a target='_blank' href='nibbleant.github.io'>给爽爽的爱</a>
+		</div>
+	</div>
+
+<audio id="myaudio" loop="3">
+  <source src="./sound/click.mp3"  />
+</audio>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2011, 7, 20);
+		together.setHours(00);
+		together.setMinutes(00);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 100);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+
+	</script>
+	<script>
+window.scrollTo(0,document.body.scrollHeight) 
+</script>
+</body>
+</html>
